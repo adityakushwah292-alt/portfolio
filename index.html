@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Portfolio of Aditya Kushwah, Civil Engineer and Site Engineer.">
+<title>Aditya Kushwah | Civil & Site Engineer</title>
+
+<style>
+:root {
+  --bg: #0d1117;
+  --panel: #141c25;
+  --text: #f4f6f8;
+  --muted: #a8b2bf;
+  --accent: #f5a623;
+  --line: #283340;
+  --max: 1120px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Inter, Segoe UI, Arial, sans-serif;
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.wrap {
+  width: min(var(--max), 92%);
+  margin: auto;
+}
+
+/* NAVIGATION */
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: #0d1117ef;
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(12px);
+}
+
+.nav {
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-weight: 800;
+  letter-spacing: .4px;
+}
+
+.logo span {
+  color: var(--accent);
+}
+
+nav {
+  display: flex;
+  gap: 25px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+nav a:hover {
+  color: var(--accent);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 18px;
+  border-radius: 7px;
+  background: var(--accent);
+  color: #161616;
+  font-weight: 800;
+  border: 1px solid var(--accent);
+  transition: .2s;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.06);
+}
+
+.btn.outline {
+  background: transparent;
+  color: var(--text);
+  border-color: var(--line);
+}
+
+/* HERO SECTION */
+
+.hero {
+  padding: 100px 0 82px;
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  align-items: center;
+  gap: 50px;
+}
+
+.eyebrow {
+  color: var(--accent);
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+.hero h1 {
+  font-size: clamp(42px, 6vw, 72px);
+  line-height: 1.06;
+  letter-spacing: -2px;
+  margin: 16px 0 22px;
+}
+
+.hero h1 span {
+  color: var(--accent);
+}
+
+.hero p {
+  color: var(--muted);
+  font-size: 17px;
+  max-width: 600px;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 28px;
+}
+
+/* HERO DESIGN BOX */
+
+.hero-visual {
+  border: 1px solid var(--line);
+  background: linear-gradient(145deg, #192431, #11171f);
+  border-radius: 18px;
+  min-height: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-visual:before {
+  content: "";
+  position: absolute;
+  width: 270px;
+  height: 270px;
+  border: 1px solid #f5a62344;
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 35px #f5a62308,
+    0 0 0 70px #f5a62305;
+}
+
+.blueprint {
+  z-index: 1;
+  text-align: center;
+  padding: 30px;
+}
+
+.blueprint .big {
+  font-size: 90px;
+  color: var(--accent);
+  font-weight: 900;
+  line-height: 1;
+}
+
+.blueprint p {
+  margin: 10px 0;
+  color: var(--muted);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+/* STATISTICS */
+
+.stats {
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 24px 0;
+}
+
+.stat {
+  text-align: center;
+}
+
+.stat strong {
+  display: block;
+  font-size: 25px;
+}
+
+.stat small {
+  color: var(--muted);
+}
+
+/* GENERAL SECTIONS */
+
+section {
+  padding: 78px 0;
+}
+
+.section-title {
+  margin-bottom: 32px;
+}
+
+.section-title h2 {
+  font-size: 34px;
+  letter-spacing: -1px;
+  margin: 6px 0;
+}
+
+.section-title p {
+  color: var(--muted);
+  margin: 0;
+}
+
+/* CARDS */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  padding: 24px;
+  border-radius: 12px;
+}
+
+.card h3 {
+  margin: 0 0 10px;
+}
+
+.card p {
+  color: var(--muted);
+  margin: 0;
+}
+
+.tag {
+  display: inline-block;
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+}
+
+/* ABOUT SECTION */
+
+.about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 35px;
+  align-items: start;
+}
+
+.about p {
+  color: var(--muted);
+}
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.skill {
+  padding: 8px 12px;
+  border: 1px solid var(--line);
+  border-radius: 100px;
+  color: #dbe2ea;
+  font-size: 13px;
+}
+
+/* PROJECTS */
+
+.project {
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.project .placeholder {
+  border: 1px dashed #475361;
+  border-radius: 8px;
+  padding: 26px;
+  text-align: center;
+  color: var(--muted);
+  margin-bottom: 16px;
+}
+
+.project h3 {
+  margin: 0 0 8px;
+}
+
+.project p {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.project .note {
+  font-size: 11px;
+  color: #8190a0;
+  margin-top: 12px;
+}
+
+/* CONTACT */
+
+.contact {
+  background: linear-gradient(140deg, #171f29, #10151c);
+  border: 1px solid var(--line);
+  padding: 36px;
+  border-radius: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.contact p {
+  color: var(--muted);
+  max-width: 600px;
+}
+
+.contact-links {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* FOOTER */
+
+footer {
+  border-top: 1px solid var(--line);
+  padding: 26px 0;
+  color: var(--muted);
+  font-size: 13px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* MOBILE MENU */
+
+.menu {
+  display: none;
+  background: none;
+  border: 1px solid var(--line);
+  color: white;
+  border-radius: 6px;
+  padding: 8px 10px;
+}
+
+/* TABLET */
+
+@media (max-width: 800px) {
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 65px 0;
+  }
+
+  .hero-visual {
+    min-height: 260px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .about {
+    grid-template-columns: 1fr;
+  }
+
+  .contact {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  nav {
+    gap: 14px;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 560px) {
+  nav {
+    display: none;
+    position: absolute;
+    top: 72px;
+    left: 0;
+    right: 0;
+    background: #0d1117;
+    padding: 18px 4%;
+    border-bottom: 1px solid var(--line);
+    flex-direction: column;
+  }
+
+  nav.open {
+    display: flex;
+  }
+
+  .menu {
+    display: block;
+  }
+
+  .nav .btn {
+    display: none;
+  }
+
+  .hero h1 {
+    letter-spacing: -1px;
+  }
+
+  .stats {
+    gap: 10px;
+  }
+
+  .stat strong {
+    font-size: 20px;
+  }
+
+  .stat small {
+    font-size: 11px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  section {
+    padding: 55px 0;
+  }
+
+  .contact {
+    padding: 24px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+<header class="topbar">
+  <div class="wrap nav">
+
+    <a class="logo" href="#home">
+      ADITYA<span>.</span>
+    </a>
+
+    <nav id="nav">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <a class="btn" href="#contact">Let's Connect</a>
+
+    <button class="menu" id="menu" aria-label="Toggle menu">
+      ☰
+    </button>
+
+  </div>
+</header>
+
+<main>
+
+<!-- HERO -->
+<section class="wrap hero" id="home">
+
+  <div>
+    <div class="eyebrow">
+      Civil Engineer • Site Engineer
+    </div>
+
+    <h1>
+      Building with<br>
+      <span>precision & purpose.</span>
+    </h1>
+
+    <p>
+      I'm Aditya Kushwah, a Civil Engineer focused on construction
+      execution, site coordination, quality, and practical
+      problem-solving—turning drawings and plans into work on the ground.
+    </p>
+
+    <div class="actions">
+      <a class="btn" href="#projects">
+        Explore My Work ↗
+      </a>
+
+      <a class="btn outline" href="#contact">
+        Contact Me
+      </a>
+    </div>
+  </div>
+
+  <div class="hero-visual">
+    <div class="blueprint">
+      <div class="big">⌂</div>
+      <p>Engineering • Execution • Detail</p>
+    </div>
+  </div>
+
+</section>
+
+<!-- STATS -->
+<div class="wrap stats">
+
+  <div class="stat">
+    <strong>Civil</strong>
+    <small>Engineering Background</small>
+  </div>
+
+  <div class="stat">
+    <strong>Site</strong>
+    <small>Execution & Coordination</small>
+  </div>
+
+  <div class="stat">
+    <strong>Quality</strong>
+    <small>Detail-oriented Approach</small>
+  </div>
+
+</div>
+
+<!-- ABOUT -->
+<section class="wrap" id="about">
+
+  <div class="section-title">
+    <div class="eyebrow">A little about me</div>
+    <h2>Engineer-minded. Field-focused.</h2>
+  </div>
+
+  <div class="about">
+
+    <div>
+      <p>
+        I’m a Civil Engineering graduate interested in residential
+        and building construction, site execution, and the processes
+        that keep projects organized, safe, and moving forward.
+        I enjoy learning directly on site, coordinating with teams,
+        and understanding how construction details come together.
+      </p>
+
+      <p>
+        This portfolio is a growing collection of my skills,
+        experience, and project learning. Project details and photos
+        will be added as they are cleared for sharing.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Career Focus</h3>
+      <p>
+        Site Engineer · Civil Execution · Residential Construction ·
+        Quantity & Material Planning · Quality Checks · Site Coordination
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section class="wrap" id="skills">
+
+  <div class="section-title">
+    <div class="eyebrow">Capabilities</div>
+    <h2>Skills & working knowledge</h2>
+    <p>Areas I’m building and applying in civil construction.</p>
+  </div>
+
+  <div class="grid">
+
+    <article class="card">
+      <span class="tag">01 / EXECUTION</span>
+      <h3>Site Execution</h3>
+      <p>
+        Construction sequence awareness, drawing interpretation,
+        site supervision, and work coordination.
+      </p>
+    </article>
+
+    <article class="card">
+      <span class="tag">02 / TECHNICAL</span>
+      <h3>Quantity & Materials</h3>
+      <p>
+        Basic quantity calculations, material tracking,
+        and construction measurement awareness.
+      </p>
+    </article>
+
+    <article class="card">
+      <span class="tag">03 / QUALITY</span>
+      <h3>Quality & Safety</h3>
+      <p>
+        Workmanship checks, site housekeeping, safe working
+        practices, and attention to specifications.
+      </p>
+    </article>
+
+    <article class="card">
+      <span class="tag">04 / DRAWINGS</span>
+      <h3>Drawing Reading</h3>
+      <p>
+        Understanding civil, architectural, and construction
+        drawings for site requirements.
+      </p>
+    </article>
+
+    <article class="card">
+      <span class="tag">05 / SOFTWARE</span>
+      <h3>AutoCAD</h3>
+      <p>
+        Intermediate working knowledge for viewing, drafting,
+        and working with construction drawings.
+      </p>
+    </article>
+
+    <article class="card">
+      <span class="tag">06 / DEVELOPMENT</span>
+      <h3>Continuous Learning</h3>
+      <p>
+        Building practical skills in site management,
+        planning, estimation, and project execution.
+      </p>
+    </article>
+
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section class="wrap" id="projects">
+
+  <div class="section-title">
+    <div class="eyebrow">Selected work</div>
+    <h2>Projects & experience</h2>
+    <p>
+      Add your actual project details and approved photos here—
+      no confidential site information.
+    </p>
+  </div>
+
+  <div class="grid">
+
+    <article class="card project">
+      <div>
+        <div class="placeholder">
+          Add site photo / project image
+        </div>
+
+        <span class="tag">RESIDENTIAL CONSTRUCTION</span>
+        <h3>Residential Building Project</h3>
+        <p>
+          Describe the project type, construction stage,
+          your role, and tasks performed.
+        </p>
+      </div>
+
+      <div class="note">Project details to be added</div>
+    </article>
+
+    <article class="card project">
+      <div>
+        <div class="placeholder">
+          Add site photo / project image
+        </div>
+
+        <span class="tag">SITE EXECUTION</span>
+        <h3>Construction Work & Coordination</h3>
+        <p>
+          Highlight supervision, drawing coordination,
+          measurements, or team coordination you handled.
+        </p>
+      </div>
+
+      <div class="note">Project details to be added</div>
+    </article>
+
+    <article class="card project">
+      <div>
+        <div class="placeholder">
+          Add drawing / project image
+        </div>
+
+        <span class="tag">TECHNICAL WORK</span>
+        <h3>Planning & Estimation Practice</h3>
+        <p>
+          Show sample BOQs, quantity take-offs, drawings,
+          or academic/training projects.
+        </p>
+      </div>
+
+      <div class="note">Project details to be added</div>
+    </article>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="wrap" id="contact">
+
+  <div class="contact">
+
+    <div>
+      <div class="eyebrow">Get in touch</div>
+      <h2>Let’s build something solid.</h2>
+
+      <p>
+        Open to Civil Engineer and Site Engineer opportunities,
+        construction projects, and professional connections.
+      </p>
+    </div>
+
+    <div class="contact-links">
+      <a class="btn" href="mailto:your.email@example.com">
+        Email Me ↗
+      </a>
+
+      <a class="btn outline"
+         href="https://www.linkedin.com/"
+         target="_blank"
+         rel="noopener">
+        LinkedIn ↗
+      </a>
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="wrap">
+
+  <span>
+    © <span id="year"></span> Aditya Kushwah · Civil Engineer
+  </span>
+
+  <span>Made with purpose & precision.</span>
+
+</footer>
+
+<!-- JAVASCRIPT -->
+<script>
+
+document.getElementById('year').textContent =
+  new Date().getFullYear();
+
+const menu = document.getElementById('menu');
+const nav = document.getElementById('nav');
+
+menu.addEventListener('click', () => {
+  nav.classList.toggle('open');
+});
+
+nav.querySelectorAll('a').forEach(a => {
+  a.addEventListener('click', () => {
+    nav.classList.remove('open');
+  });
+});
+
+</script>
+
+</body>
+</html>
